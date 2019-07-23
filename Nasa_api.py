@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/home", methods=['POST'])
 def home():
 	apodurl = 'https://api.nasa.gov/planetary/apod?api_key='
-	mykey = request.form['api']
+        mykey = 'api_key=fOrNYkZMYt8KEwieCkuEcYJi3uMYQvQpvDDFjEmv'
 
 	apodurlobj = urllib.request.urlopen(apodurl + mykey)
 
