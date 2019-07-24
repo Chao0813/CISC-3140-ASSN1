@@ -7,21 +7,20 @@ import json
 app = Flask(__name__)
 
 
-@app.route("/home", methods=['POST'])
+@app.route('/')
 def home():
-	apodurl = 'https://api.nasa.gov/planetary/apod?api_key='
-        mykey = 'fOrNYkZMYt8KEwieCkuEcYJi3uMYQvQpvDDFjEmv'
-
-	apodurlobj = urllib.request.urlopen(apodurl + mykey)
-
-	apodread = apodurlobj.read()
-
-	decodeapod = json.loads(apodread.decode('utf-8'))
-
-	image= decodeapod['apodurl']
-
-	return render_template('layout.html', picture=image)
-
+    url = 'https://api.nasa.gov/planetary/apod?api_key='
+    key = 'fOrNYkZMYt8KEwieCkuEcYJi3uMYQvQpvDDFjEmv'
+    urlobj = urllib.request.urlopen(url + key)
+    read = urlobj.read()
+    decode = json.loads(read.decode('utf-8'))
+    image = decode['url'
+    return render_template('layout1.html', image=image)
+@app.route('/key', methods=['POST'])
+def key():
+    key = request.form['apikey']
+    image = buildURL(url, key)
+    return render_template('layout1.html', image=image)
 
 if __name__ == '__main__':
     app.run(debug=True)
