@@ -1,19 +1,18 @@
-    
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>CISC3140- ASSN1</title>
-<body>
-  	<h1>NASA API</h1>
-
-    <form methods = "POST", action="/home">
-        <label> API KEY </label>
-        <input type="text" placeholder="Enter your key" name="api" id="key">
-        <button id="search">Search</button>
+  </head>
+  <body>
+    <center>
+    <h1>NASA API PICTURE</h1>
+    <div>Your api key:</div>
+    <form method="POST" action="/key">
+	     <input type="text" name ="key" id="key"
+		      placeholder="Please enter API key " />
+	     <button id="search">Search</button>
     </form>
-    <embed src="{{ picture }}"/embed>
-
-</body>
-
+    <embed src="{{ image }}"/embed>
+      </center>
+  </body>
 </html>
-
